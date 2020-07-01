@@ -1,0 +1,10 @@
+SELECT QUARTER, SUM(quantity) AS total_penjualan, SUM(quantity * priceeach) AS revenue
+FROM (
+		SELECT orderNumber, STATUS, quantity, priceeach, 1 AS QUARTER
+		FROM orders_1
+		UNION
+		SELECT orderNumber, STATUS, quantity, priceeach, 2 AS QUARTER
+		FROM orders_2
+) tabel_a
+WHERE STATUS = 'Shipped'
+GROUP BY quarter
