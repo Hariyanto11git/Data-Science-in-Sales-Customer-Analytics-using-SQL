@@ -1,0 +1,9 @@
+#Quarter-1
+SELECT SUM(quantity) AS total_pengeluaran, SUM(quantity * priceeach) AS revenue 
+FROM orders_1
+WHERE STATUS = 'Shipped';
+
+#Quarter-2
+SELECT SUM(quantity) AS total_pengeluaran, SUM(quantity * priceeach) AS revenue 
+FROM orders_2
+WHERE STATUS = 'Shipped';
